@@ -58,7 +58,7 @@ APP_SCOPES=openid,phone,profile,email
     - Basic profile that Market can provide.
     - Required only for Market
 
-Now, you can run `docker-compose run` if you use Docker.
+Now, you can run `docker-compose run` if you use Docker. `docker-compose.yml` contains DB user/password information.
 
 4. Create your database and configure database connection. This service uses PostgreSQL as default database, so if you use PostgreSQL, just add your connection `DATABASE_URL=....` in your `.env`. If you want to test how it works, please run PostgreSQL in your machine with a new database (`$ createdb skeleton_nodejs`) and proceed with the next steps. Or else you can use `docker-compose run`, which comes with PostgreSQL.
 

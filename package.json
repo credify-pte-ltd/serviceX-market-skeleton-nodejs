@@ -1,0 +1,52 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is a skeleton service that can easily integrate serviceX.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "yarn jest -i",
+    "db:setup": "yarn run db:migrate",
+    "sequelize": "sequelize --models-path=database/models",
+    "db:create": "yarn run sequelize db:create",
+    "model:create": "yarn run sequelize model:generate",
+    "db:migrate:create": "yarn run sequelize migration:generate",
+    "db:migrate": "yarn run sequelize db:migrate",
+    "db:migrate:undo": "yarn run sequelize db:migrate:undo:all",
+    "db:seed:generate": "yarn run sequelize seed:generate",
+    "db:seed:all": "yarn run sequelize db:seed:all",
+    "db:seed:undo": "yarn run sequelize db:seed:undo:all"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/__tests__/utils/*"
+    ],
+    "testSequencer": "<rootDir>/__tests__/utils/testSequencer.js"
+  },
+  "keywords": [],
+  "author": "@credify-pte-ltd",
+  "license": "MIT",
+  "dependencies": {
+    "@credify/nodejs": "^1.21.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "@jest/test-sequencer": "^28.1.0",
+    "babel-cli": "^6.26.0",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "superagent": "^7.1.3",
+    "supertest": "^6.2.3"
+  }
+}

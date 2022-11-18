@@ -1,8 +1,10 @@
 # serviceX Market Skeleton Node.js
 
+[API docs](https://api-servicex-integration.credify.one/)
+
 ## Background
 
-We create boilerplate implementation to minimize our partner's development workload. This repository is for Markets to integrate serviceX with Node.js. This repository is more comprehensive to deal with secure data sharing so if you are interested in BNPL and not going to share your proprietary data through serviceX, then you should check out [https://github.com/credify-pte-ltd/bnpl-skeleton-nodejs](https://github.com/credify-pte-ltd/bnpl-skeleton-nodejs).
+We create reference implementation to minimize our partner's development workload. This repository is for Markets to integrate serviceX with Node.js. This repository is more comprehensive to deal with secure data sharing so if you are interested in BNPL and not going to share your proprietary data through serviceX, then you should check out [https://github.com/credify-pte-ltd/bnpl-skeleton-nodejs](https://github.com/credify-pte-ltd/bnpl-skeleton-nodejs).
 
 Here is [the integration guide reference](https://developers.credify.one/guide/integration-guide.html). We need several API endpoints to complete the serviceX integration. That being said, by using this skeleton service, you can get it done right away!
 

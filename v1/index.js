@@ -145,7 +145,7 @@ module.exports = ({ db }) => {
   })
 
   // Not required. If you want to render BNPL simulation data in your platform, please use this.
-  api.post(DEFAULT_PATH.SIMULATION, async (req, res) => {
+  api.post("/simulation", async (req, res) => {
     const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
     return simulation(req, res, { db, credify })
   })

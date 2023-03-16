@@ -11,11 +11,13 @@ const config = envConfigs[dbEnv];
 const db = {};
 
 let sequelize;
-if (config.url) {
-  sequelize = new Sequelize(config.url, config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+console.log("config url: ", config.url)
+sequelize = new Sequelize(config.database, config.username, config.password, {
+  host: config.host,
+  dialect: config.dialect,
+  port: config.port,
+  operatorsAliases: false,
+});
 
 fs
   .readdirSync(__dirname)

@@ -6,11 +6,14 @@ const filterOffer = async (req, res, { db, credify }) => {
   if (process.env.CONTEXT_ENV !== "Jest") {
     try {
       const token = extractToken(req)
-      const validToken = await credify.auth.introspectToken(
+      const tokenResult = await credify.auth.introspectTokenReturnResult(
         token,
         PERMISSION_SCOPE.READ_FILTER_OFFER
       )
-      if (!validToken) {
+      // check token is active, has correct audience, has correct scope
+      const isCorrectAudience = tokenResult.data.aud[0].includes("/api/offers/filter")
+      const isCorrectScope = tokenResult.data.scope.split(" ").includes(PERMISSION_SCOPE.READ_FILTER_OFFER)
+      if (!tokenResult.data.active || !isCorrectAudience || !isCorrectScope) {
         return res.status(401).send({message: "Unauthorized"})
       }
     } catch (e) {
@@ -53,6 +56,8 @@ const filterOffer = async (req, res, { db, credify }) => {
         offer.required_custom_scopes || [],
         userClaims
       )
+
+      console.log("evaluate offer res: ", JSON.stringify(result))
 
       const formattedOffer = {
         ...offer,

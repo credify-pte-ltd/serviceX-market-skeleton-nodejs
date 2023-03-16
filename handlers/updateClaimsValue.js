@@ -1,23 +1,20 @@
 const {authenticateInternalAPIClient } = require("../dataInteraction");
 
-const simulation = async (req, res, { db, credify }) => {
+const updateClaimsValue = async(req, res, { db, credify }) => {
   const validRequest = await authenticateInternalAPIClient(db, req);
   if (!validRequest) {
     return res.status(401).send({ message: "Unauthorized" })
   }
-
+  
   try {
-
-    const productType = req.body.productType
-    const request= req.body.request
-
-    const response = await credify.offer.simulate(productType, request)
+    const id = req.body.id
+    const claimTokens = req.body.claimTokens
+    const response = await credify.offer.updateClaimsValue(id, claimTokens)
 
     res.status(200).json(response)
-  } catch (e) {
+  } catch(e) {
     res.status(500).send({ message: e.message })
   }
 }
 
-module.exports = simulation;
-
+module.exports = updateClaimsValue

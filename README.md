@@ -26,7 +26,10 @@ $ cp .env.sample .env
 ```
 
 ```shell
-DATABASE_URL=postgres://user:password@postgres:5432/skeleton_nodejs
+DATABASE_NAME=skeleton_nodejs
+DATABASE_USER=user
+DATABASE_PASSWORD=password
+DATABASE_PORT=5432
 MODE=sandbox
 PORT=8000
 APP_ID=YOUR_APP_ID
@@ -35,9 +38,14 @@ APP_API_KEY=YOUR_API_KEY
 APP_REDIRECT_URL=https://your-website/callback
 APP_SCOPES=openid,phone,profile,email
 ```
-
-- `DATABASE_URL` (Optional)
-    - This is described below.
+- `DATABASE_NAME` (Optional)
+    - Your database name
+- `DATABASE_USER` (Optional)
+    - Your database username
+- `DATABASE_PASSWORD` (Optional)
+    - Your database password
+- `DATABASE_PORT` (Optional)
+    - Your database port
 - `MODE` (Mandatory)
     - Either `sandbox` or `production`, depending on deployment environment.
 - `PORT` (Optional)
@@ -62,7 +70,7 @@ APP_SCOPES=openid,phone,profile,email
 
 Now, you can run `docker-compose run` if you use Docker. `docker-compose.yml` contains DB user/password information.
 
-4. Create your database and configure database connection. This service uses PostgreSQL as default database, so if you use PostgreSQL, just add your connection `DATABASE_URL=....` in your `.env`. If you want to test how it works, please run PostgreSQL in your machine with a new database (`$ createdb skeleton_nodejs`) and proceed with the next steps. Or else you can use `docker-compose run`, which comes with PostgreSQL.
+4. Create your database and configure database connection. This service uses PostgreSQL as default database, so if you use PostgreSQL, just add your connection `DATABASE_NAME=....` in your `.env`. If you want to test how it works, please run PostgreSQL in your machine with a new database (`$ createdb skeleton_nodejs`) and proceed with the next steps. Or else you can use `docker-compose run`, which comes with PostgreSQL.
 
 If you use docker-compose, this step and the following steps (step 4~6) are not necessary.
 

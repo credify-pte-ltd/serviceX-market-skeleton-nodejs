@@ -16,6 +16,10 @@ const getOrders = require("../handlers/getOrders")
 const cancelOrder = require("../handlers/cancelOrder")
 // const disburse = require("../handlers/disburse")
 const simulation = require("../handlers/simulation")
+const intents = require("../handlers/intents")
+const queryProduct = require("../handlers/queryProduct")
+const queryOffers = require("../handlers/queryOffers")
+const updateClaimsValue = require("../handlers/updateClaimsValue")
 const faker = require("faker")
 const { DEFAULT_PATH } = require("../utils/constants");
 
@@ -150,6 +154,29 @@ module.exports = ({ db }) => {
     return simulation(req, res, { db, credify })
   })
 
+  // Called by your system when users create new intents
+  api.post("/intents", async (req, res) => {
+    const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
+    return intents(req, res, { db, credify })
+  })
+
+  // Called by your system when you want to show list of available products to a user in your application
+  api.post("/product", async (req, res) => {
+    const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
+    return queryProduct(req, res, { db, credify })
+  })
+
+  // Called by your system when you want to show list of active offers for a claim provider in your application
+  api.post("/offers", async (req, res) => {
+    const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
+    return queryOffers(req, res, { db, credify })
+  })
+
+  // Called by your system when you want to update a claim values in certain scope
+  api.post("/claims", async (req, res) => {
+    const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
+    return updateClaimsValue(req, res, { db, credify })
+  })
 
   return api
 }

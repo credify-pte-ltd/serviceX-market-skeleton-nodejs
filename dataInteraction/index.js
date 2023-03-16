@@ -31,11 +31,11 @@ const fetchUserClaimObject = async (db, localId, credifyId, includingScopes, wit
   // Add advanced scopes
 
   // NOTE: Please change this value according to what you have registered on Dashboard.
-  const scopeName = "40f9a736-0d97-409b-a0f7-d23ebca20bde:loyalty-point-data-1653892708";
+  const scopeName = "3b36d4f6-610e-4a16-924a-0a6766203439:loyalty-point-1678164692";
   if (includingScopes.length === 0 || includingScopes.includes(scopeName)) {
     claims[scopeName] = {
-      "40f9a736-0d97-409b-a0f7-d23ebca20bde:amount-1653892708": user.loyaltyPoint,
-      "40f9a736-0d97-409b-a0f7-d23ebca20bde:tier-1653892708": user.tier,
+      "3b36d4f6-610e-4a16-924a-0a6766203439:amount-1678164692": user.loyaltyPoint,
+      "3b36d4f6-610e-4a16-924a-0a6766203439:tier-1678164692": user.tier,
       [`${scopeName}:commitment`]: commitments ? commitments[scopeName] : undefined,
     }
   }

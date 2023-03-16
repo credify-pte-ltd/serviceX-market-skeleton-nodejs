@@ -54,7 +54,7 @@ const encryptClaims = async (req, res, { db, credify }) => {
     }
     res.send(data)
   } catch (e) {
-    res.send(e)
+    res.status(500).send({message: e.message})
   }
 }
 

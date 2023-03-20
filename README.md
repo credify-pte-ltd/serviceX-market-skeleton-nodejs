@@ -129,7 +129,7 @@ You will need to edit `testConfig.js`. If you need a test user (`TEST_CREDIFY_ID
 $ yarn test
 ```
 
-## How to deploy on Heroku
+## [DEPRECATED] How to deploy on Heroku 
 
 ```shell
 $ git push heroku main

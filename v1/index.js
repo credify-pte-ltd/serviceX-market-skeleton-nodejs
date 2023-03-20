@@ -92,17 +92,19 @@ module.exports = ({ db }) => {
   })
 
   // Called by Credify backend
+  // If you use our BNPL management console, this is not necessary
   api.post(DEFAULT_PATH.GET_BNPL_DISBURSEMENT_DOCS, async (req, res) => {
     const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
     return getBNPLDisbursementDocs(req, res, { db, credify })
   })
 
+  // DEPRECATED
   // Called by your system for BNPL
   // This is necessary to start BNPL
-  api.post("/orders", async (req, res) => {
-    const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
-    return createOrder(req, res, { db, credify })
-  })
+  // api.post("/orders", async (req, res) => {
+  //   const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
+  //   return createOrder(req, res, { db, credify })
+  // })
 
   // Called by your system for BNPL
   // This is optional
@@ -132,15 +134,12 @@ module.exports = ({ db }) => {
   })
    */
 
-  // Deprecated
   // Called by your system for BNPL
   // If you use our BNPL management console, this is not necessary
-  /**
-   *   api.post(DEFAULT_PATH.PUSH_BNPL_DISBURSEMENT_CLAIMS, async (req, res) => {
-   *     const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
-   *     return pushDisbursementClaims(req, res, { db, credify })
-   *   })
-   */
+  api.post(DEFAULT_PATH.PUSH_BNPL_DISBURSEMENT_CLAIMS, async (req, res) => {
+    const credify = await Credify.create(formKey(signingKey), apiKey, { mode })
+    return pushDisbursementClaims(req, res, { db, credify })
+  })
 
   // Not required. This is for the demo purpose.
   api.get("/orders", async (req, res) => {

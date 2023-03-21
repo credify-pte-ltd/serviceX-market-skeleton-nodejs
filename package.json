@@ -28,7 +28,7 @@
   "author": "@credify-pte-ltd",
   "license": "MIT",
   "dependencies": {
-    "@credify/nodejs": "^1.23.8",
+    "@credify/nodejs": "^1.23.18",
     "axios": "^0.27.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

@@ -284,10 +284,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@credify/api-docs@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@credify/api-docs/-/api-docs-1.6.1.tgz#4c53ab71de51819ee39f2a3c6b34c4aa6cfaaa65"
-  integrity sha512-mvHPDbik9ov9HJ2J6zwuxFMyrjXrOZ95i5leKrIKLeCk8UXqiJLsSvpm1H+Sb40SXblfv5oV8zeNSv5tQpV72g==
+"@credify/api-docs@1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@credify/api-docs/-/api-docs-1.6.3.tgz#9006b0acea7b12cfe52f3db296ebeb2ee41941e5"
+  integrity sha512-wpIUAPe26bvA+AU8AkIgLn1s3HDWEP+yFmTBlQlB1XqGL7Avbn31rj7uXcjUHQu+qETT0//q01HC8nNRvTh3Tw==
+  dependencies:
+    "@redocly/openapi-cli" "^0.12.9"
+
+"@credify/api-docs@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@credify/api-docs/-/api-docs-1.6.2.tgz#e4452c1893540213caa79db34707d8863d893b6f"
+  integrity sha512-wNK3IOrWPPTon3CIegrjLcTdzwc9eWeK1TysVI2e21qCb/IqDo/rpNDa4JjY8JGbPWO0zjoFZTno2e9nbODgeg==
   dependencies:
     "@redocly/openapi-cli" "^0.12.9"
 
@@ -321,12 +328,12 @@
     node-jose "2.1.1"
     wif "^2.0.6"
 
-"@credify/nodejs@^1.23.18":
-  version "1.23.18"
-  resolved "https://registry.yarnpkg.com/@credify/nodejs/-/nodejs-1.23.18.tgz#96640642dbde2b8adadf885f44a68672febc146c"
-  integrity sha512-KjV62BrQTJEc0Rsk8f5IvhMHdPFsWJLn1yne1ypmJ4Dhb/gclCqurZKVF0SN9k8VSl6aIHWD4tlSzf+koMddyg==
+"@credify/nodejs@^1.23.19":
+  version "1.23.19"
+  resolved "https://registry.yarnpkg.com/@credify/nodejs/-/nodejs-1.23.19.tgz#78933ceb6c4449b474f2d588724f2075ea1f7e30"
+  integrity sha512-TMnh5HmOLpEgL/I/En2SBpueMg4vDuatX6WRpicWKnlFp1Us0qGRlRsFYcw4TYR4HxaZLJGpxzyzb0jJzbX5gA==
   dependencies:
-    "@credify/api-docs" "^1.6.1"
+    "@credify/api-docs" "1.6.3"
     "@credify/crypto" "1.4.9"
     axios "^0.21.1"
     axios-mock-adapter "^1.19.0"

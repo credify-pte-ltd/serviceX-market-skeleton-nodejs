@@ -47,6 +47,17 @@ const BNPL_ORDER_STATUS = {
 
 const STANDARD_SCOPES = ["phone", "email", "address", "profile"];
 
+const CONDITION_KINDS = {
+  containCondition: "CONTAIN_CONDITION",
+  inRangeCondition: "IN_RANGE_CONDITION",
+  largerThanCondition: "LARGER_THAN_CONDITION",
+  largerThanOrEqualCondition: "LARGER_THAN_OR_EQUAL_CONDITION",
+  lessThanCondition: "LESS_THAN_CONDITION",
+  lessThanOrEqualCondition: "LESS_THAN_OR_EQUAL_CONDITION",
+  equalityCondition: "EQUALITY_CONDITION",
+  andCondition: "AND_CONDITION",
+}
+
 module.exports = {
   PERMISSION_SCOPE,
   DEFAULT_PATH_PREFIX,
@@ -55,4 +66,5 @@ module.exports = {
   DISBURSEMENT_DOCS,
   BNPL_ORDER_STATUS,
   STANDARD_SCOPES,
+  CONDITION_KINDS,
 }

@@ -1,7 +1,6 @@
 const { Op } = require("sequelize")
 const extractToken = require("../utils/extractToken")
 const { PERMISSION_SCOPE, CONDITION_KINDS } = require("../utils/constants")
-const {fetchVerificationInfo, fetchUserClaimObject} = require("../dataInteraction");
 
 const countUsers = async (req, res, { db, credify }) => {
   if (process.env.CONTEXT_ENV !== "Jest") {
@@ -28,8 +27,6 @@ const countUsers = async (req, res, { db, credify }) => {
   if (conditions.length !== requiredCustomScopes.length) {
     return res.status(400).send({ message: "Conditions length and scopes length must be the same" })
   }
-
-  const claims = fetchUserClaimObject
 
   // This is a future usage. Not necessary at the moment
   const counts = await queryUsers(db, conditions, requiredCustomScopes)
